@@ -1,0 +1,51 @@
+# version: '3.9'
+
+# services:
+#   app:
+#     container_name: rentalmobil-app
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     image: laravel-rental-mobil
+#     restart: unless-stopped
+#     working_dir: /var/www
+#     volumes:
+#       - .:/var/www
+#       - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+#       - ./public/storage/mobil:/var/www/storage/app/public/mobil
+#     ports:
+#       - 8118:8118
+#     depends_on:
+#       - postgres
+#     networks:
+#       - laravel
+#     command: >
+#       sh -c "
+#         php artisan migrate --force
+#         php artisan serve --host=0.0.0.0 --port=8118
+#       "
+
+#   postgres:
+#     container_name: laravel-postgres
+#     image: postgres:16
+#     restart: always
+#     environment:
+#       POSTGRES_DB: ${DB_DATABASE}
+#       POSTGRES_USER: ${DB_USERNAME}
+#       POSTGRES_PASSWORD: ${DB_PASSWORD}
+#     volumes:
+#       # - postgres_data:/var/lib/postgresql/data
+#       - /var/lib/postgresql/data
+#     networks:
+#       - laravel
+#     ports:
+#       - 5432:5432
+
+# networks:
+#   laravel:
+#     name : laravel
+#     # driver: bridge
+
+# volumes:
+#   postgres_data:
+#   storage: {}
